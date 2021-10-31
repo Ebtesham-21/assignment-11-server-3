@@ -29,7 +29,7 @@ async function run(){
         app.get('/products', async(req, res) => {
             const cursor = productCollection.find({});
             const products = await cursor.toArray();
-            res.send(products);
+            res.status(200).send(products);
 
 
         })
@@ -50,11 +50,6 @@ app.get('/', (req, res) => {
     res.send('server running ok');
 });
 
-app.get('/products', async(req, res) => {
-    const cursor = productCollection.find({});
-    const products = await cursor.toArray();
-    res.send(products);
-});
 
 
 
