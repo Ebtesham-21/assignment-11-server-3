@@ -50,6 +50,12 @@ app.get('/', (req, res) => {
     res.send('server running ok');
 });
 
+app.get('/products', async(req, res) => {
+    const cursor = productCollection.find({});
+    const products = await cursor.toArray();
+    res.send(products);
+});
+
 
 
 app.listen(port, () => {
