@@ -50,9 +50,7 @@ app.get('/', (req, res) => {
     res.send('server running ok');
 });
 
-app.get('/', (req, res) => {
-    res.send('hello updated here')
-});
+
 
 app.listen(port, () => {
     console.log('server running port', port);
