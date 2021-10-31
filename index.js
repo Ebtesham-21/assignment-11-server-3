@@ -17,6 +17,7 @@ app.use(express.json());
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ctrvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+console.log(uri);
 
 
 async function run(){
@@ -50,7 +51,7 @@ app.get('/', (req, res) => {
     res.send('server running ok');
 });
 
-
+console.log("all route ok");
 
 
 app.listen(port, () => {
